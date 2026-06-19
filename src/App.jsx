@@ -5,7 +5,7 @@ import {
 } from 'framer-motion';
 import {
   ArrowUpRight, ExternalLink, Send, Mail,
-  Sun, Moon, Download,
+  Sun, Moon, Download, Menu, X,
   CheckCircle, Zap, Shield, Code2, Cpu, Server,
   ChevronRight, MessageSquare, Tag,
   Dumbbell, Award, Wallet, Layers, Link2, Trophy, Palette, Terminal
@@ -427,56 +427,93 @@ function Cursor() {
 /* ─── Navbar ─────────────────────────────────────────────────────────────── */
 function Navbar({ active, theme, toggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', fn);
     return () => window.removeEventListener('scroll', fn);
   }, []);
-  const scrollTo = id => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  const scrollTo = id => {
+    setMenuOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
-    <motion.header
-      className={`navbar ${scrolled ? 'scrolled' : ''}`}
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-    >
-      <div className="nav-logo" onClick={() => scrollTo('home')}>
-        <span className="logo-circle" />
-        <span className="logo-circle logo-circle-2" />
-      </div>
-
-      <nav className="nav-links">
-        {NAV_LABELS.map((lbl, i) => (
-          <motion.button
-            key={lbl}
-            className={`nav-link ${active === SECTIONS[i] ? 'active' : ''}`}
-            onClick={() => scrollTo(SECTIONS[i])}
-            whileTap={{ scale: 0.95 }}
-          >
-            {lbl}
-          </motion.button>
-        ))}
-      </nav>
-
-      <div className="nav-right">
-        <div className="nav-status">
-          <span className="nav-status-dot" />
-          Open to work
+    <>
+      <motion.header
+        className={`navbar ${scrolled ? 'scrolled' : ''}`}
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <div className="nav-logo" onClick={() => scrollTo('home')}>
+          <span className="logo-circle" />
+          <span className="logo-circle logo-circle-2" />
         </div>
-        <motion.button
-          className="nav-hire-btn"
-          onClick={() => scrollTo('contact')}
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.96 }}
-        >
-          Let's Talk <ArrowUpRight size={13} />
-        </motion.button>
-        <motion.button className="nav-theme-btn" onClick={toggleTheme} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.93 }}>
-          {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
-        </motion.button>
-      </div>
-    </motion.header>
+
+        <nav className="nav-links">
+          {NAV_LABELS.map((lbl, i) => (
+            <motion.button
+              key={lbl}
+              className={`nav-link ${active === SECTIONS[i] ? 'active' : ''}`}
+              onClick={() => scrollTo(SECTIONS[i])}
+              whileTap={{ scale: 0.95 }}
+            >
+              {lbl}
+            </motion.button>
+          ))}
+        </nav>
+
+        <div className="nav-right">
+          <div className="nav-status">
+            <span className="nav-status-dot" />
+            Open to work
+          </div>
+          <motion.button
+            className="nav-hire-btn"
+            onClick={() => scrollTo('contact')}
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+          >
+            Let's Talk <ArrowUpRight size={13} />
+          </motion.button>
+          <motion.button className="nav-theme-btn" onClick={toggleTheme} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.93 }}>
+            {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
+          </motion.button>
+          {/* Mobile hamburger */}
+          <button className="nav-mobile-toggle" onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
+            {menuOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
+      </motion.header>
+
+      {/* Mobile drawer */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className="mobile-drawer"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {NAV_LABELS.map((lbl, i) => (
+              <button key={lbl} className={`mobile-nav-link ${active === SECTIONS[i] ? 'active' : ''}`} onClick={() => scrollTo(SECTIONS[i])}>
+                {lbl}
+              </button>
+            ))}
+            <div className="mobile-drawer-footer">
+              <button className="mobile-hire-btn" onClick={() => scrollTo('contact')}>
+                Let's Talk <ArrowUpRight size={13} />
+              </button>
+              <button className="nav-theme-btn" onClick={toggleTheme}>
+                {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 
@@ -1180,7 +1217,7 @@ function Contact() {
 
             {/* First-client callout */}
             <div className="first-client-box">
-              <div className="fcb-title"> client offer</div>
+              <div className="fcb-title">Special intro offer</div>
               <p className="fcb-desc">
                 To build my portfolio of real client work, I'm offering my first 3 clients discounted rates
                 in exchange for an honest review and testimonial once the work is done.
