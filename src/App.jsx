@@ -7,7 +7,8 @@ import {
   ArrowUpRight, ExternalLink, Send, Mail,
   Sun, Moon, Download,
   CheckCircle, Zap, Shield, Code2, Cpu, Server,
-  ChevronRight, MessageSquare, Tag
+  ChevronRight, MessageSquare, Tag,
+  Dumbbell, Award, Wallet, Layers, Link2, Trophy, Palette, Terminal
 } from 'lucide-react';
 import './App.css';
 
@@ -198,7 +199,7 @@ const PROJECTS = [
     github: 'https://github.com/ketanBisht/fitshit',
     live: 'https://fitshit.vercel.app/',
     color: '#E8A820',
-    icon: '🏋️',
+    icon: Dumbbell,
   },
   {
     id: 'skills-on-chain',
@@ -213,7 +214,7 @@ const PROJECTS = [
     github: 'https://github.com/ketanBisht/chainCertificateSystem',
     live: 'https://skillsonchain.vercel.app/',
     color: '#9945FF',
-    icon: '🔗',
+    icon: Award,
   },
   {
     id: 'batuwa',
@@ -229,7 +230,7 @@ const PROJECTS = [
     live: 'https://batuwa-home.vercel.app/',
     npm: 'https://chromewebstore.google.com/detail/batuwa-wallet/bmcinobeebahpnbpgjphaengofjiigai',
     color: '#14F195',
-    icon: '🪙',
+    icon: Wallet,
   },
   {
     id: 'brutalistic',
@@ -245,7 +246,7 @@ const PROJECTS = [
     live: 'https://brutalistic.vercel.app/',
     npm: 'https://www.npmjs.com/package/@k10_here/brutalistic',
     color: '#FF6B6B',
-    icon: '🏗️',
+    icon: Layers,
   },
   {
     id: 'shawty',
@@ -260,7 +261,7 @@ const PROJECTS = [
     github: 'https://github.com/ketanBisht/shawty',
     live: 'https://shawty.vercel.app/',
     color: '#00D4FF',
-    icon: '🔗',
+    icon: Link2,
   },
   {
     id: 'unfair-wiki',
@@ -275,7 +276,7 @@ const PROJECTS = [
     github: 'https://github.com/ketanBisht/game/tree/main/unfairWiki',
     live: 'https://unfairwiki.vercel.app/',
     color: '#F97316',
-    icon: '🏁',
+    icon: Trophy,
   },
   {
     id: 'matchit',
@@ -290,7 +291,7 @@ const PROJECTS = [
     github: 'https://github.com/ketanBisht/matchit',
     live: 'https://matchitt.vercel.app/',
     color: '#A855F7',
-    icon: '🎮',
+    icon: Palette,
   },
   {
     id: 'joking-terminal',
@@ -305,7 +306,7 @@ const PROJECTS = [
     github: 'https://github.com/ketanBisht/joking-terminal',
     npm: 'https://www.npmjs.com/package/joking-terminal',
     color: '#22C55E',
-    icon: '😂',
+    icon: Terminal,
   },
 ];
 
@@ -496,7 +497,7 @@ function Hero() {
           transition={{ delay: 0.05, duration: 0.5, ease: [0.16,1,0.3,1] }}
         >
           <span className="avail-dot" />
-          Looking for my first freelance clients
+          Looking for freelance clients
         </motion.div>
 
         {/* Name — letter-by-letter flip */}
@@ -522,7 +523,7 @@ function Hero() {
         >
           Full Stack Developer &amp; Blockchain Engineer. I build real, shipped products —
           SaaS platforms, Web3 apps, UI libraries, and CLI tools. Now actively looking
-          for my first freelance clients.
+          for my freelance clients.
         </motion.p>
 
         {/* Magnetic CTAs */}
@@ -552,7 +553,7 @@ function Hero() {
             {[
               { icon: Zap,           text: 'Undivided attention on your project' },
               { icon: Tag,           text: 'Competitive intro rates' },
-              { icon: CheckCircle,   text: '8 shipped, real-world projects' },
+              { icon: CheckCircle,   text: 'Shipped products you can see live' },
               { icon: MessageSquare, text: 'Daily updates, zero ghosting' },
             ].map(({ icon: Icon, text }, i) => (
               <motion.div
@@ -627,7 +628,7 @@ function Hero() {
             </div>
           </motion.div>
 
-          {/* Floating stat chips */}
+          {/* Floating role chips */}
           <motion.div
             className="photo-chip photo-chip-1"
             initial={{ opacity: 0, scale: 0, y: 20 }}
@@ -635,8 +636,8 @@ function Hero() {
             transition={{ delay: 0.9, type: 'spring', stiffness: 400, damping: 22 }}
             whileHover={{ scale: 1.08 }}
           >
-            <span className="chip-num">8</span>
-            <span className="chip-lbl">Projects</span>
+            <span className="chip-num" style={{ fontSize: '0.72rem' }}>Full Stack</span>
+            <span className="chip-lbl">React · Node</span>
           </motion.div>
           <motion.div
             className="photo-chip photo-chip-2"
@@ -645,8 +646,8 @@ function Hero() {
             transition={{ delay: 1.05, type: 'spring', stiffness: 400, damping: 22 }}
             whileHover={{ scale: 1.08 }}
           >
-            <span className="chip-num">1</span>
-            <span className="chip-lbl">npm pkg</span>
+            <span className="chip-num" style={{ fontSize: '0.72rem' }}>Web3</span>
+            <span className="chip-lbl">Solana · Rust</span>
           </motion.div>
           <motion.div
             className="photo-chip photo-chip-3"
@@ -655,8 +656,8 @@ function Hero() {
             transition={{ delay: 1.18, type: 'spring', stiffness: 400, damping: 22 }}
             whileHover={{ scale: 1.08 }}
           >
-            <span className="chip-num">Open</span>
-            <span className="chip-lbl">to work</span>
+            <span className="chip-num" style={{ fontSize: '0.72rem', color: '#22c55e' }}>Available</span>
+            <span className="chip-lbl">For Hire</span>
           </motion.div>
 
           {/* Tech stack strip */}
@@ -741,7 +742,7 @@ function Projects() {
                 <div className="pfcard-inner">
                   <div className="pfcard-left">
                     <div className="pfcard-icon-row">
-                      <span className="pfcard-emoji">{p.icon}</span>
+                      {(() => { const ProjIcon = p.icon; return <div className="pfcard-icon-box" style={{ color: p.color }}><ProjIcon size={20} strokeWidth={1.75} /></div>; })()}
                       <span className="pfcard-category">{
                           p.category === 'saas' ? 'SaaS Product' :
                           p.category === 'blockchain' ? 'Blockchain' :
@@ -808,7 +809,7 @@ function Projects() {
                 >
                   <div className="proj-card-accent" />
                   <div className="proj-card-top">
-                    <span className="proj-card-emoji">{p.icon}</span>
+                    {(() => { const ProjIcon = p.icon; return <div className="proj-card-icon-box" style={{ color: p.color }}><ProjIcon size={18} strokeWidth={1.75} /></div>; })()}
                     <span className="proj-card-cat-badge">{
                       p.category === 'saas' ? 'SaaS' :
                       p.category === 'blockchain' ? 'Blockchain' :
@@ -965,8 +966,8 @@ function About() {
               I learned by building real things — SaaS apps, Solana programs, npm packages, and multiplayer games.
             </motion.p>
             <motion.p className="about-bio" variants={fadeUp(0.14)}>
-              I don't have a client list yet, but I have 8 shipped projects that prove I can build real software.
-              Every project I take on gets my full focus — because how I treat your project is how I build my reputation.
+              Every project I take on gets my full focus — I build like your reputation
+              is on the line too, because it is.
             </motion.p>
             <motion.p className="about-bio" variants={fadeUp(0.18)} style={{ marginBottom: '1.75rem' }}>
               I care about clean code, honest communication, and shipping things that actually work and look great.
@@ -979,16 +980,16 @@ function About() {
           <div>
             <motion.div className="about-stats" variants={stagger}>
               <motion.div className="about-stat-block" variants={fadeUp(0.08)}>
-                <div className="asb-main-num">8</div>
+                <div className="asb-main-num" style={{ fontSize: '1.5rem', letterSpacing: '-0.02em' }}>Shipped</div>
                 <div className="asb-main-info">
-                  <span className="asb-main-lbl">Projects shipped</span>
-                  <span className="asb-main-desc">Real apps — deployed, working, and on GitHub</span>
+                  <span className="asb-main-lbl">& Deployed</span>
+                  <span className="asb-main-desc">Production apps — live URLs, real code on GitHub</span>
                 </div>
               </motion.div>
               {[
-                { n: '5+',   lbl: 'Languages' },
-                { n: '1',    lbl: 'npm package' },
-                { n: '100%', lbl: 'Commitment' },
+                { n: 'Multi',  lbl: 'Chain · Sol + ETH' },
+                { n: 'E2E',    lbl: 'Full Stack' },
+                { n: '100%',   lbl: 'Focus' },
               ].map((s, i) => (
                 <motion.div key={i} className="about-stat-block" variants={fadeUp(0.12 + i * 0.06)}>
                   <span className="asb-num">{s.n}</span>
@@ -1104,7 +1105,7 @@ Sent via portfolio contact form`
       <div className="c-form-row">
         <div className="c-group">
           <label className="c-label">Your Name</label>
-          <input className="c-input" placeholder="Alex Johnson" value={form.name} onChange={set('name')} required />
+          <input className="c-input" placeholder="enter your name" value={form.name} onChange={set('name')} required />
         </div>
         <div className="c-group">
           <label className="c-label">Email</label>
@@ -1173,13 +1174,13 @@ function Contact() {
         <div className="contact-grid">
           <motion.div variants={fadeUp(0.1)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
             <p className="contact-desc">
-              I'm actively looking for my first freelance projects. If you have something you want built — a web app, an API,
+              I'm actively looking for my freelance projects. If you have something you want built — a web app, an API,
               a Solana program — let's talk. I'll give it everything I've got.
             </p>
 
             {/* First-client callout */}
             <div className="first-client-box">
-              <div className="fcb-title">🎯 First client offer</div>
+              <div className="fcb-title"> client offer</div>
               <p className="fcb-desc">
                 To build my portfolio of real client work, I'm offering my first 3 clients discounted rates
                 in exchange for an honest review and testimonial once the work is done.
@@ -1227,7 +1228,7 @@ function Footer() {
         <span className="footer-brand">Ketan Bisht</span>
         <span className="footer-avail">
           <span className="footer-avail-dot" />
-          Open to first clients
+          Open to clients
         </span>
       </div>
       <div className="footer-links">
