@@ -1146,7 +1146,12 @@ ${form.message}
 ---
 Sent via portfolio contact form`
     );
-    window.open(`https://mail.google.com/mail/?view=cm&to=ketan.work30@gmail.com&su=${subject}&body=${body}`, '_blank');
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = `mailto:ketan.work30@gmail.com?subject=${subject}&body=${body}`;
+    } else {
+      window.open(`https://mail.google.com/mail/?view=cm&to=ketan.work30@gmail.com&su=${subject}&body=${body}`, '_blank');
+    }
     setSent(true);
     setTimeout(() => { setSent(false); setForm({ name: '', email: '', type: '', budget: '', message: '' }); }, 6000);
   };
