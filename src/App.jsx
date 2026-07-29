@@ -8,7 +8,7 @@ import {
   Sun, Moon, Download, Menu, X,
   CheckCircle, Zap, Shield, Code2, Cpu, Server,
   ChevronRight, MessageSquare, Tag,
-  Dumbbell, Award, Wallet, Layers, Link2, Trophy, Palette, Terminal
+  Dumbbell, Award, Wallet, Layers, Link2, Trophy, Palette, Terminal, Gamepad2
 } from 'lucide-react';
 import './App.css';
 
@@ -187,6 +187,20 @@ const SOCIALS = [
 /* ── Projects — the real centrepiece ── */
 const PROJECTS = [
   {
+    id: 'ctrlplay',
+    name: 'Ctrl+Play',
+    tagline: 'Premium Web Gaming Hub',
+    desc: 'A premium platform to easily discover and play highly interactive web games. Features a neobrutalist design system, complex Framer Motion animations, and custom gaming experiences.',
+    challenge: 'Build a zero-friction, highly engaging user experience for web gaming discovery with modern animations and fluid transitions.',
+    solution: 'Designed and implemented the entire platform using Next.js, Tailwind CSS, and Framer Motion. Curated original and addictive mini-games with immersive UI.',
+    tech: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion'],
+    category: 'game',
+    featured: true,
+    live: 'https://ctrlplay.fun',
+    color: '#b4ff5c',
+    icon: Gamepad2,
+  },
+  {
     id: 'fitshit',
     name: 'FitShit',
     tagline: 'Multi-Tenant Gym Management SaaS',
@@ -217,6 +231,22 @@ const PROJECTS = [
     icon: Award,
   },
   {
+    id: 'brutalistic',
+    name: 'Brutalistic',
+    tagline: 'Open-Source Neobrutalist React UI Library — npm',
+    desc: 'Published npm package (@k10_here/brutalistic) with 18+ production-ready components — Button, Modal, Tabs, Accordion, Marquee, CustomCursor and more — using a strict Neobrutalist design system (thick borders, offset shadows, Yellow/Black/White palette).',
+    challenge: 'Most UI libraries trend soft and minimal. Fill the gap for developers who want a visually distinct, high-contrast Neobrutalist design system without building one from scratch.',
+    solution: 'Vite library mode with dual ESM + CJS output, class-variance-authority for variants, vite-plugin-dts for type generation, and a live Vercel doc site serving as an interactive playground.',
+    tech: ['React 19', 'TypeScript', 'Tailwind CSS v4', 'Vite', 'CVA', 'clsx', 'lucide-react'],
+    category: 'library',
+    featured: true,
+    github: 'https://github.com/ketanBisht/brutalistic',
+    live: 'https://brutalistic.vercel.app/',
+    npm: 'https://www.npmjs.com/package/@k10_here/brutalistic',
+    color: '#FF6B6B',
+    icon: Layers,
+  },
+  {
     id: 'batuwa',
     name: 'Batuwa',
     tagline: 'Non-Custodial Multi-Chain Crypto Wallet',
@@ -231,22 +261,6 @@ const PROJECTS = [
     npm: 'https://chromewebstore.google.com/detail/batuwa-wallet/bmcinobeebahpnbpgjphaengofjiigai',
     color: '#14F195',
     icon: Wallet,
-  },
-  {
-    id: 'brutalistic',
-    name: 'Brutalistic',
-    tagline: 'Open-Source Neobrutalist React UI Library — npm',
-    desc: 'Published npm package (@k10_here/brutalistic) with 18+ production-ready components — Button, Modal, Tabs, Accordion, Marquee, CustomCursor and more — using a strict Neobrutalist design system (thick borders, offset shadows, Yellow/Black/White palette).',
-    challenge: 'Most UI libraries trend soft and minimal. Fill the gap for developers who want a visually distinct, high-contrast Neobrutalist design system without building one from scratch.',
-    solution: 'Vite library mode with dual ESM + CJS output, class-variance-authority for variants, vite-plugin-dts for type generation, and a live Vercel doc site serving as an interactive playground.',
-    tech: ['React 19', 'TypeScript', 'Tailwind CSS v4', 'Vite', 'CVA', 'clsx', 'lucide-react'],
-    category: 'library',
-    featured: false,
-    github: 'https://github.com/ketanBisht/brutalistic',
-    live: 'https://brutalistic.vercel.app/',
-    npm: 'https://www.npmjs.com/package/@k10_here/brutalistic',
-    color: '#FF6B6B',
-    icon: Layers,
   },
   {
     id: 'shawty',
@@ -313,8 +327,8 @@ const PROJECTS = [
 const FILTERS = [
   { label: 'All', value: 'all' },
   { label: 'SaaS Products', value: 'saas' },
-  { label: 'Blockchain / Web3', value: 'blockchain' },
   { label: 'Games', value: 'game' },
+  { label: 'Web3 Apps', value: 'blockchain' },
   { label: 'Tools & Libraries', value: 'tools' },
   { label: 'OSS Library', value: 'library' },
   { label: 'CLI Tools', value: 'cli' },
@@ -329,10 +343,10 @@ const SERVICES = [
     highlight: true,
   },
   {
-    icon: Cpu,
-    title: 'Blockchain & Web3',
-    desc: 'Solana programs, Ethereum smart contracts, DeFi protocols and NFT platforms built with security and gas efficiency in mind.',
-    tech: ['Solana', 'Anchor', 'Rust', 'Ethers.js', 'Solidity'],
+    icon: Palette,
+    title: 'Frontend Engineering',
+    desc: 'Complex interactive interfaces, WebGL experiences, and fluid animations. I build beautiful UIs that feel premium and responsive.',
+    tech: ['React', 'Next.js', 'Framer Motion', 'Tailwind CSS'],
     highlight: false,
   },
   {
@@ -345,10 +359,10 @@ const SERVICES = [
 ];
 
 const SKILLS_A = [
-  { name: 'React / Next.js',   pct: 80 },
-  { name: 'Node.js / Express', pct: 75 },
-  { name: 'TypeScript',        pct: 72 },
-  { name: 'Solana / Anchor',   pct: 68 },
+  { name: 'React / Next.js',   pct: 90 },
+  { name: 'Node.js / Express', pct: 85 },
+  { name: 'TypeScript',        pct: 80 },
+  { name: 'Framer Motion',     pct: 75 },
 ];
 const SKILLS_B = [
   { name: 'Rust',              pct: 55 },
@@ -366,9 +380,9 @@ const EXPERIENCE = [
   },
   {
     period: '2024 – 2025',
-    role: 'Blockchain & Web3 Projects',
+    role: 'Advanced Web Projects',
     company: 'Personal Projects',
-    desc: 'Built SkillsOnChain (Solana SBT credentialing system with Rust/Anchor smart contracts) and Batuwa (non-custodial multi-chain HD wallet + Chrome extension).',
+    desc: 'Built Ctrl+Play (premium web gaming hub), SkillsOnChain (credentialing system), and Batuwa (multi-chain wallet + Chrome extension).',
   },
   {
     period: '2023 – 2024',
@@ -558,8 +572,8 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.6 }}
         >
-          Full Stack Developer &amp; Blockchain Engineer. I build real, shipped products —
-          SaaS platforms, Web3 apps, UI libraries, and CLI tools. Now actively looking
+          Full Stack Web Developer. I build real, shipped products —
+          SaaS platforms, interactive web apps, UI libraries, and CLI tools. Now actively looking
           for my freelance clients.
         </motion.p>
 
@@ -661,7 +675,7 @@ function Hero() {
             {/* Name overlay */}
             <div className="photo-name-overlay">
               <span className="photo-name-text">Ketan Bisht</span>
-              <span className="photo-name-role">Full Stack &amp; Blockchain</span>
+              <span className="photo-name-role">Full Stack Web Developer</span>
             </div>
           </motion.div>
 
@@ -683,8 +697,8 @@ function Hero() {
             transition={{ delay: 1.05, type: 'spring', stiffness: 400, damping: 22 }}
             whileHover={{ scale: 1.08 }}
           >
-            <span className="chip-num" style={{ fontSize: '0.72rem' }}>Web3</span>
-            <span className="chip-lbl">Solana · Rust</span>
+            <span className="chip-num" style={{ fontSize: '0.72rem' }}>Frontend</span>
+            <span className="chip-lbl">UI/UX · Motion</span>
           </motion.div>
           <motion.div
             className="photo-chip photo-chip-3"
@@ -699,7 +713,7 @@ function Hero() {
 
           {/* Tech stack strip */}
           <div className="photo-stack-strip">
-            {['React','Solana','Node.js','Rust','TS'].map((t, i) => (
+            {['React','Next.js','Node.js','Tailwind','TS'].map((t, i) => (
               <motion.span
                 key={t} className="photo-stack-chip"
                 initial={{ opacity: 0, y: 10 }}
@@ -989,7 +1003,7 @@ function Services() {
 function About() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
-  const tags = ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Solana', 'Anchor', 'Rust', 'Docker', 'AWS', 'Figma', 'OpenAI'];
+  const tags = ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Framer Motion', 'Rust', 'Docker', 'AWS', 'Figma', 'OpenAI'];
 
   return (
     <section id="about" className="section" ref={ref}>
@@ -999,8 +1013,8 @@ function About() {
             <motion.span className="sec-eyebrow" variants={fadeUp(0)}>Who I Am</motion.span>
             <motion.h2 className="sec-big" variants={fadeUp(0.06)}>about<br />me.</motion.h2>
             <motion.p className="about-bio" variants={fadeUp(0.1)}>
-              I'm <strong>Ketan Bisht</strong>, a self-taught Full Stack & Blockchain developer based in India.
-              I learned by building real things — SaaS apps, Solana programs, npm packages, and multiplayer games.
+              I'm <strong>Ketan Bisht</strong>, a self-taught Full Stack Web Developer based in India.
+              I learned by building real things — SaaS apps, interactive web apps, npm packages, and multiplayer games.
             </motion.p>
             <motion.p className="about-bio" variants={fadeUp(0.14)}>
               Every project I take on gets my full focus — I build like your reputation
@@ -1154,7 +1168,7 @@ Sent via portfolio contact form`
         <select className="c-input c-select" value={form.type} onChange={set('type')}>
           <option value="">What do you need built?</option>
           <option>Full Stack Web App / SaaS</option>
-          <option>Blockchain / Smart Contract</option>
+          <option>Interactive Web Experience</option>
           <option>API / Backend System</option>
           <option>Frontend / UI only</option>
           <option>Something else</option>
@@ -1212,7 +1226,7 @@ function Contact() {
           <motion.div variants={fadeUp(0.1)} initial="hidden" animate={inView ? 'show' : 'hidden'}>
             <p className="contact-desc">
               I'm actively looking for my freelance projects. If you have something you want built — a web app, an API,
-              a Solana program — let's talk. I'll give it everything I've got.
+              an interactive web application — let's talk. I'll give it everything I've got.
             </p>
 
             {/* First-client callout */}
