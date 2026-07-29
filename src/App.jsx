@@ -1182,20 +1182,13 @@ Sent via portfolio contact form`
       <div className="c-group">
         <label className="c-label">Budget Range</label>
         <select className="c-input c-select" value={form.budget} onChange={set('budget')}>
-          <option value="">Rough budget (helps me scope it)</option>
-          <optgroup label="🇮🇳 INR (India)">
-            <option>₹10,000 – ₹30,000</option>
-            <option>₹30,000 – ₹1,00,000</option>
-            <option>₹1,00,000 – ₹3,00,000</option>
-            <option>₹3,00,000+</option>
-          </optgroup>
-          <optgroup label="🌐 USD (International)">
-            <option>$200 – $500</option>
-            <option>$500 – $1,500</option>
-            <option>$1,500 – $5,000</option>
-            <option>$5,000+</option>
-          </optgroup>
-          <option>Not sure yet</option>
+          <option value="">Expected Budget Range</option>
+          <option>Under $150</option>
+          <option>$150 – $300</option>
+          <option>$300 – $600</option>
+          <option>$600 – $1,200</option>
+          <option>$1,200+</option>
+          <option>To be discussed</option>
         </select>
       </div>
       <div className="c-group">
