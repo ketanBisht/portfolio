@@ -19,9 +19,15 @@
   border-bottom-color: var(--border);
   backdrop-filter: blur(12px);
 }
-.nav-logo { display: flex; align-items: center; cursor: pointer; flex-shrink: 0; }
-.logo-circle { width: 22px; height: 22px; border-radius: 50%; background: var(--text); display: block; }
-.logo-circle-2 { margin-left: -8px; background: var(--amber); }
+.nav-logo { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; flex-shrink: 0; }
+.nav-logo svg { display: block; transition: transform 0.2s ease; }
+.nav-logo:hover svg { transform: scale(1.08); }
+.nav-logo-name {
+  font-family: var(--font-head); font-size: 1rem; font-weight: 800;
+  color: var(--text); letter-spacing: -0.02em; line-height: 1;
+  transition: color 0.2s;
+}
+.nav-logo:hover .nav-logo-name { color: var(--amber); }
 
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-link {

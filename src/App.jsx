@@ -461,8 +461,11 @@ function Navbar({ active, theme, toggleTheme }) {
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="nav-logo" onClick={() => scrollTo('home')}>
-          <span className="logo-circle" />
-          <span className="logo-circle logo-circle-2" />
+          <svg viewBox="0 0 36 36" width="32" height="32" aria-label="Ketan Bisht logo">
+            <circle cx="11" cy="18" r="11" fill="var(--text)" />
+            <circle cx="25" cy="18" r="11" fill="var(--amber)" />
+          </svg>
+          <span className="nav-logo-name">KB</span>
         </div>
 
         <nav className="nav-links">
