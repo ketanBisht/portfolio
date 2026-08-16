@@ -593,6 +593,17 @@ function Hero() {
           <MagneticBtn className="hero-cta-secondary" onClick={scrollToContact} data-cursor="Chat">
             Get in Touch
           </MagneticBtn>
+          <a
+            href="/ketan_resume.pdf"
+            download="Ketan_Bisht_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-cta-secondary"
+            style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+            data-cursor="Download"
+          >
+            <Download size={15} /> Resume
+          </a>
         </motion.div>
 
         {/* Perks block */}
@@ -1070,13 +1081,15 @@ function Skills() {
         <div style={{ display:'flex', alignItems:'flex-end', justifyContent:'space-between', flexWrap:'wrap', gap:'1rem', marginBottom:'0.5rem' }}>
           <motion.h2 className="sec-big" style={{ marginBottom:0 }} variants={fadeUp(0.06)} initial="hidden" animate={inView ? 'show' : 'hidden'}>skills &<br />resume.</motion.h2>
           <motion.a
-            href="#"
+            href="/ketan_resume.pdf"
+            download="Ketan_Bisht_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="download-cv-btn"
             variants={fadeUp(0.08)}
             initial="hidden"
             animate={inView ? 'show' : 'hidden'}
             whileHover={{ y: -2 }}
-            onClick={e => e.preventDefault()}
           >
             <Download size={14} />
             Download CV
