@@ -1262,7 +1262,7 @@ function Contact() {
               {[
                 { Icon: GithubIcon,   label: 'GitHub',    handle: '@ketanbisht',           href: 'https://github.com/ketanbisht' },
                 { Icon: LinkedinIcon, label: 'LinkedIn',  handle: 'Ketan Bisht',           href: 'https://www.linkedin.com/in/ketan-bisht-4b782b25b/' },
-                { Icon: XIcon,        label: 'X',         handle: '@theketanBisht',        href: 'https://x.com/theketanBisht' },
+                { Icon: XIcon,        label: 'X',         handle: '@thek10here',        href: 'https://x.com/thek10here' },
                 { Icon: Mail,         label: 'Email',     handle: 'ketan.work30@gmail.com', href: 'mailto:ketan.work30@gmail.com' },
               ].map(({ Icon, label, handle, href }, i) => (
                 <motion.a key={i} href={href} className="csoc-item" target="_blank" rel="noreferrer" whileHover={{ x: 5 }}>
