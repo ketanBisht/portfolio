@@ -180,7 +180,7 @@ const NAV_LABELS  = ['Home', 'Projects', 'Services', 'About', 'Resume', 'Contact
 const SOCIALS = [
   { label: 'GitHub',   Icon: GithubIcon,  href: 'https://github.com/ketanbisht',                      tip: 'GitHub' },
   { label: 'LinkedIn', Icon: LinkedinIcon, href: 'https://www.linkedin.com/in/ketan-bisht-4b782b25b/', tip: 'LinkedIn' },
-  { label: 'X',        Icon: XIcon,        href: 'https://x.com/theketanBisht',                        tip: 'X / Twitter' },
+  { label: 'X',        Icon: XIcon,        href: 'https://x.com/thek10here',                        tip: 'X / Twitter' },
   { label: 'Email',    Icon: Mail,         href: 'mailto:ketan.work30@gmail.com',                      tip: 'Email' },
 ];
 
