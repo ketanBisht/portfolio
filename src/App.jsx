@@ -187,6 +187,20 @@ const SOCIALS = [
 /* ── Projects — the real centrepiece ── */
 const PROJECTS = [
   {
+    id: 'devdirect',
+    name: 'DevDirect',
+    tagline: 'Curated Developer Resource Directory',
+    desc: 'A hand-curated directory of 74+ developer tools, frameworks, UI libraries, APIs, and AI tools — organized across 10 categories. Features a Stack Explorer with preset tech stacks, instant ⌘K search, tag-based filtering, user auth, resource bookmarking, custom lists, and community submissions.',
+    challenge: 'Developer tooling discovery is fragmented across Twitter threads, Reddit posts, and blog articles. Build a single, opinionated resource hub that helps engineers find the right tool fast — without the noise.',
+    solution: 'Built a full-stack directory with Next.js and a Supabase backend. Curated 74+ tools by hand across Deployment, UI Libraries, AI Tools, APIs, Hosting, and more. Stack Explorer presets (SaaS, AI, UI, Backend) let users zero in on their exact build context instantly.',
+    tech: ['Next.js', 'React', 'Tailwind CSS', 'Supabase', 'TypeScript'],
+    category: 'tools',
+    featured: true,
+    live: 'https://devdirect.kten.space',
+    color: '#6366f1',
+    icon: Code2,
+  },
+  {
     id: 'ctrlplay',
     name: 'Ctrl+Play',
     tagline: 'Premium Web Gaming Hub',
